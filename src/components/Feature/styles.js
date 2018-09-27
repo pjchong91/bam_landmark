@@ -9,7 +9,10 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     color: colors.white,
-    textTransform: "uppercase"
+    textTransform: "uppercase",
+    backgroundPosition: "center",
+    backgroundSize: "600px auto",
+    backgroundRepeat: "no-repeat"
   },
   button: {
     color: colors.yellow,

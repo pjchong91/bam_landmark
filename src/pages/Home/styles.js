@@ -36,11 +36,12 @@ const styles = {
   },
   apartment: {
     margin: "0 auto",
-    display: "flex",
-    justifyContent: "center"
+    maxHeight: "100%"
   },
   apartmentImage: {
-    maxWidth: "100%"
+    maxWidth: "100%",
+    height: "auto",
+    width: "100%"
   },
   header: {
     margin: 0

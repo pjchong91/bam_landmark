@@ -1,6 +1,6 @@
 import { fonts, colors } from "./../../theme";
 
-const styles = {
+const styles = theme => ({
   container: {
     position: "fixed",
     display: "flex",
@@ -45,7 +45,13 @@ const styles = {
     bottom: -140,
     left: 20,
     width: 10
+  },
+  mobileHidden: {
+    display: "none"
+    // [theme.breakpoints.up("xl")]: {
+    //   display: "block"
+    // }
   }
-};
+});
 
 export default styles;

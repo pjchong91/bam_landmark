@@ -4,13 +4,14 @@ import HeroBanner from "./../../components/HeroBanner";
 import LogoWhite from "./../../assets/images/landmarkLogoWhite.svg";
 import Apartment from "./../../assets/images/apartment.jpg";
 import Feature from "./../../components/Feature";
+import Residences from "./../../assets/images/residences.jpg";
 
 const mockData = [
   {
     subHeader: "Refined",
     header: "Residences",
     button: "Discover the Residences",
-    imageurl: "../../assets/images/residences.jpg"
+    imageurl: Residences
   }
 ];
 

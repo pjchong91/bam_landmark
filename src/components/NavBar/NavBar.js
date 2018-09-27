@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./styles.js";
 import Logo from "./../../assets/images/landmarkLogo.svg";
 import { Squeeze } from "react-burgers";
+import { withStyles } from "@material-ui/core";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -19,16 +20,28 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div style={styles.container}>
-        <Link to="/" style={styles.logoContainer}>
-          <img src={Logo} style={styles.logo} />
+      <div className={this.props.classes.container}>
+        <Link to="/" className={this.props.classes.logoContainer}>
+          <img src={Logo} className={this.props.classes.logo} />
         </Link>
-        <div style={styles.rightNav}>
-          <div style={styles.rightButtons}>
-            <a style={{ ...styles.link, ...styles.active }}>En</a>
-            <a style={styles.link}>繁體</a>
-            <a style={styles.link}>简体</a>
-            <a style={{ ...styles.link, ...styles.mobileHidden }}>Register</a>
+        <div className={this.props.classes.rightNav}>
+          <div className={this.props.classes.rightButtons}>
+            <a
+              className={`${this.props.classes.link} ${
+                this.props.classes.active
+              }`}
+            >
+              En
+            </a>
+            <a className={this.props.classes.link}>繁體</a>
+            <a className={this.props.classes.link}>简体</a>
+            <a
+              className={`${this.props.classes.link} ${
+                this.props.classes.mobileHidden
+              }`}
+            >
+              Register
+            </a>
           </div>
           <Squeeze
             color="#fff"
@@ -42,4 +55,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withStyles(styles)(NavBar);
