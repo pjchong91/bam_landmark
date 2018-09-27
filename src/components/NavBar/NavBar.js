@@ -13,12 +13,12 @@ class NavBar extends React.Component {
     };
   }
 
-  _toggleMenu() {
-    this.setState({ showMenu: !this.state.showMenu });
-    console.log("ok!");
-  }
+  // _toggleMenu() {
+  //   this.setState({ showMenu: !this.state.showMenu });
+  // }
 
   render() {
+    console.log(this.props);
     return (
       <div className={this.props.classes.container}>
         <Link to="/" className={this.props.classes.logoContainer}>
@@ -47,7 +47,7 @@ class NavBar extends React.Component {
             color="#fff"
             lineHeight={2}
             width={35}
-            onClick={() => this._toggleMenu()}
+            onClick={() => this.props.value.toggleMenu()}
           />
         </div>
       </div>
