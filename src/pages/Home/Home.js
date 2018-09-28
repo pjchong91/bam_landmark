@@ -6,6 +6,7 @@ import Apartment from './../../assets/images/apartment.jpg';
 import Feature from './../../components/Feature';
 import Residences from './../../assets/images/residences.jpg';
 import { withStyles } from '@material-ui/core';
+import { Parallax } from 'react-scroll-parallax';
 
 const mockData = [
   {
@@ -16,7 +17,13 @@ const mockData = [
   },
 ];
 
-const Home = ({ classes }) => {
+const renderFeatureItem = () => {
+  return mockData.map((item, index) => (
+    <Feature item={item} key={item.index} />
+  ));
+};
+
+const Home = ({ classes, values }) => {
   return (
     <div className={classes.container}>
       <HeroBanner />
@@ -30,19 +37,49 @@ const Home = ({ classes }) => {
         </div>
       </div>{' '}
       {/*End of landmarkLife*/}
-      <div className={classes.landmarkCard}>
-        <div className={classes.apartment}>
-          <img src={Apartment} className={classes.apartmentImage} />
-        </div>
-        <div className={classes.landmarkFeature}>
-          <p className={classes.subTitle}>This is</p>
-          <img src={LogoWhite} className={classes.logo} />
-          <p className={classes.subHeaderBold}>Watch the Film ►</p>
-        </div>
-      </div>
-      {mockData.map((item, index) => (
-        <Feature item={item} key={item.index} />
-      ))}
+      {values.width > 960 ? (
+        <Parallax
+          className="custom-class"
+          offsetYMax={20}
+          offsetYMin={-5}
+          slowerScrollRate
+          tag="figure"
+        >
+          <div className={classes.landmarkCard}>
+            <div className={classes.apartment}>
+              <img src={Apartment} className={classes.apartmentImage} />
+            </div>
+            <div className={classes.landmarkFeature}>
+              <p className={classes.subTitle}>This is</p>
+              <img src={LogoWhite} className={classes.logo} />
+              <p className={classes.subHeaderBold}>Watch the Film ►</p>
+            </div>
+          </div>
+          <Parallax
+            className="custom-class"
+            offsetYMax={20}
+            offsetYMin={-5}
+            slowerScrollRate
+            tag="figure"
+          >
+            {renderFeatureItem()}
+          </Parallax>
+        </Parallax>
+      ) : (
+        <React.Fragment>
+          <div className={classes.landmarkCard}>
+            <div className={classes.apartment}>
+              <img src={Apartment} className={classes.apartmentImage} />
+            </div>
+            <div className={classes.landmarkFeature}>
+              <p className={classes.subTitle}>This is</p>
+              <img src={LogoWhite} className={classes.logo} />
+              <p className={classes.subHeaderBold}>Watch the Film ►</p>
+            </div>
+          </div>
+          {renderFeatureItem()}
+        </React.Fragment>
+      )}
     </div>
   );
 };

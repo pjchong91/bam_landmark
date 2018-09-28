@@ -18,7 +18,6 @@ class NavBar extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className={this.props.classes.container}>
         <Link to="/" className={this.props.classes.logoContainer}>

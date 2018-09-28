@@ -1,6 +1,6 @@
 import { fonts, colors } from './../../theme';
 
-const styles = {
+const styles = theme => ({
   container: {
     height: '100vh',
     backgroundPosition: '20%',
@@ -20,9 +20,13 @@ const styles = {
     textTransform: 'uppercase',
     color: colors.white,
     fontWeight: 100,
-    fontSize: 55,
+    fontSize: 35,
     padding: 0,
     margin: 0,
+    transition: '.8s ease',
+    [theme.breakpoints.up('sm')]: {
+      fontSize: 55,
+    },
   },
   bannerText: {
     transform: 'translateY(40px)',
@@ -50,6 +54,6 @@ const styles = {
     backgroundColor: colors.white,
     marginBottom: 20,
   },
-};
+});
 
 export default styles;

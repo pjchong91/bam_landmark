@@ -7,8 +7,19 @@ export class MenuProvider extends React.Component {
     super(props);
     this.state = {
       menuToggled: false,
+      width: window.innerWidth,
     };
   }
+
+  // Resource for window resizing https://goshakkk.name/different-mobile-desktop-tablet-layouts-react/
+
+  componentWillMount() {
+    window.addEventListener('resize', this.handleWindowSizeChange);
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth });
+  };
 
   _toggleMenu = () => {
     let menuToggled = !this.state.menuToggled;

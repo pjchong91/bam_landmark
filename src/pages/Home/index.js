@@ -1,2 +1,2 @@
-import Home from "./Home.js";
+import Home from './HomeContainer.js';
 export default Home;
