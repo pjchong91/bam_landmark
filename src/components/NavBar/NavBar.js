@@ -1,21 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styles from "./styles.js";
-import Logo from "./../../assets/images/landmarkLogo.svg";
-import { Squeeze } from "react-burgers";
-import { withStyles } from "@material-ui/core";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styles from './styles.js';
+import Logo from './../../assets/images/landmarkLogo.svg';
+import { Squeeze } from 'react-burgers';
+import { withStyles } from '@material-ui/core';
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showMenu: false
+      active: false,
     };
   }
 
-  // _toggleMenu() {
-  //   this.setState({ showMenu: !this.state.showMenu });
-  // }
+  _toggleActive() {
+    this.setState({ active: !this.state.active });
+  }
 
   render() {
     console.log(this.props);
@@ -47,7 +47,11 @@ class NavBar extends React.Component {
             color="#fff"
             lineHeight={2}
             width={35}
-            onClick={() => this.props.value.toggleMenu()}
+            active={this.state.active}
+            onClick={() => {
+              this.props.value.toggleMenu();
+              this._toggleActive();
+            }}
           />
         </div>
       </div>

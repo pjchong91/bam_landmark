@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const MenuContext = React.createContext();
 
@@ -6,15 +6,14 @@ export class MenuProvider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuToggled: false
+      menuToggled: false,
     };
   }
 
-  _toggleMenu() {
-    // let menuToggled = !this.state.menuToggled;
-    // this.setState({ menuToggled });
-    console.log("hello");
-  }
+  _toggleMenu = () => {
+    let menuToggled = !this.state.menuToggled;
+    this.setState({ menuToggled });
+  };
   render() {
     return (
       <MenuContext.Provider

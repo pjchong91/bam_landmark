@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styles from "./styles.js";
-import CityBanner from "./../../assets/images/hero-banner.jpg";
-import Arrow from "./../../assets/images/arrow.png";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styles from './styles.js';
+import CityBanner from './../../assets/images/hero-banner.jpg';
+import Arrow from './../../assets/images/arrow.png';
 
 const HeroBanner = () => {
   return (
