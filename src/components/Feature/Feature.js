@@ -1,19 +1,23 @@
-import React from "react";
-import styles from "./styles";
+import React from 'react';
+import styles from './styles';
+import { withStyles } from '@material-ui/core';
 
-const feature = ({ item }) => {
+const feature = ({ item, classes }) => {
   return (
     <div
-      style={{
-        ...styles.container,
-        backgroundImage: `url("${item.imageurl}")`
-      }}
+      className={`${classes.container} `}
+      // style={{ backgroundImage: `url("${item.imageurl}")` }}
     >
-      <p style={styles.subHeader}>{item.subHeader}</p>
-      <span style={styles.header}>{item.header}</span>
-      <a style={styles.button}>{item.button} </a>
+      <div className={classes.imageContainer}>
+        <img className={classes.image} src={item.imageurl} />
+      </div>
+      <div className={classes.featureText}>
+        <p className={classes.subHeader}>{item.subHeader}</p>
+        <span className={classes.header}>{item.header}</span>
+        <a className={classes.button}>{item.button} </a>
+      </div>
     </div>
   );
 };
 
-export default feature;
+export default withStyles(styles)(feature);
